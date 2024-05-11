@@ -48,12 +48,12 @@ Sigue las instrucciones en pantalla para completar la creación del superusuario
 ### Ejecutar el Servidor
 Para iniciar el servidor, ejecuta:
 ```bash
-python manage.py runserver
+python3 manage.py runserver
 ```
 Ahora puedes acceder a la aplicación en http://127.0.0.1:8000/.
 
 ### Ejecutar los Casos de Prueba
 Sigue estos pasos para ejecutar los casos de prueba:
 ```bash
-python manage.py test mynotes
+python3 manage.py test mynotes
 ```
