@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mynotes/note_edit.css' %}">
+    <title>{% if note %}Editar{% else %}Crear{% endif %} Nota</title>
+</head>
+<body>
+    <h1>{% if note %}Editar Nota{% else %}Nueva Nota{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Título:</label>
+        <input type="text" name="title" id="title" value="{% if note %}{{ note.title }}{% endif %}" required>
+        <label for="content">Contenido:</label>
+        <textarea name="content" id="content" required>{% if note %}{{ note.content }}{% endif %}</textarea>
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'mynotes:note_list' %}">Cancelar</a>
+</body>
+</html>

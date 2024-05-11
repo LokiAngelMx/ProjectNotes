@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mynotes/note_list.css' %}">
+    <title>Lista de Notas</title>
+</head>
+<body>
+    <h1>Notas</h1>
+    {% if notes %}
+        <ul>
+            {% for note in notes %}
+                <li><a href="{% url 'mynotes:note_detail' note.id %}">{{ note.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay notas disponibles.</p>
+    {% endif %}
+    <a class="crear" href="{% url 'mynotes:note_create' %}">Crear nueva nota</a>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+</body>
+</html>

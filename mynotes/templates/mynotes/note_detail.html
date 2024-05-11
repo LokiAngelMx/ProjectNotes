@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mynotes/note_detail.css' %}">
+    <title>Detalle de Nota</title>
+</head>
+<body>
+    <h1>{{ note.title }}</h1>
+    <p>{{ note.content }}</p>
+    <p>Fecha de creación: {{ note.creation_date }}</p>
+    <a href="{% url 'mynotes:note_update' note.id %}">Editar</a>
+    <a href="{% url 'mynotes:note_delete' note.id %}">Eliminar</a>
+    <a href="{% url 'mynotes:note_list' %}">Volver a la lista de notas</a>
+</body>
+</html>

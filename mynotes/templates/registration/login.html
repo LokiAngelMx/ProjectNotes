@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Iniciar sesión</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mynotes/login.css' %}">
+</head>
+<body>
+    <h2>Iniciar sesión</h2>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Iniciar sesión</button>
+    </form>
+    {% if form.errors %}
+        <p>El usuario o la contraseña son incorrectos. Por favor, intente de nuevo.</p>
+    {% endif %}
+</body>
+</html>
