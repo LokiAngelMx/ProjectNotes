@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Note
 from django.http import HttpResponseRedirect
 
-# Vista de lista de notas utilizando class-based view y LoginRequiredMixin
+# Vista de lista de notas
 class NoteListView(LoginRequiredMixin, generic.ListView):
     model = Note
     template_name = 'mynotes/note_list.html'
@@ -15,7 +15,7 @@ class NoteListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         return Note.objects.filter(user=self.request.user).order_by('-creation_date')
 
-# Vista de detalle de nota utilizando class-based view y LoginRequiredMixin
+# Vista de detalle de nota
 class NoteDetailView(LoginRequiredMixin, generic.DetailView):
     model = Note
     template_name = 'mynotes/note_detail.html'
@@ -31,7 +31,7 @@ def note_create(request):
             return redirect('mynotes:note_list')
     return render(request, 'mynotes/note_edit.html', {'note': None})
 
-# Vista para actualizar una nota utilizando métodos más manuales
+# Vista para actualizar una nota
 @login_required
 def note_update(request, pk):
     note = get_object_or_404(Note, pk=pk)
