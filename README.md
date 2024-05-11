@@ -21,8 +21,8 @@ Para ejecutar este proyecto en tu máquina local, necesitas tener instalado Pyth
 Para obtener el proyecto, clona el repositorio en tu máquina local usando:
 
 ```bash
-git clone https://github.com/LokiAngelMx/ProjectNotes.git
-cd ProjectNotes
+git clone https://github.com/LokiAngelMx/ProjectNotes.git project_notes
+cd project_notes
 ```
 
 ### Instalación de Dependencias
