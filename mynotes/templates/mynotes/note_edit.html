@@ -15,6 +15,6 @@
         <textarea name="content" id="content" required>{% if note %}{{ note.content }}{% endif %}</textarea>
         <button type="submit">Guardar</button>
     </form>
-    <a href="{% url 'mynotes:note_list' %}">Cancelar</a>
+    <a class="cancelar" href="{% url 'mynotes:note_list' %}">Cancelar</a>
 </body>
 </html>
