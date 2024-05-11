@@ -27,27 +27,33 @@ cd ProjectNotes
 
 ### Instalación de Dependencias
 Asegúrate de que Django está instalado. Si no, puedes instalarlo usando pip:
+```bash
 pip3 install django
+```
 
 ### Configuración de la Base de Datos
 Ejecuta las migraciones para configurar tu base de datos:
+```bash
 python3 manage.py makemigrations
 python3 manage.py migrate
+```
 
 ### Crear un Superusuario
 Para administrar la aplicación, deberás crear un superusuario:
+```bash
 python3 manage.py createsuperuser
+```
 Sigue las instrucciones en pantalla para completar la creación del superusuario.
 
 ### Ejecutar el Servidor
 Para iniciar el servidor, ejecuta:
+```bash
 python manage.py runserver
-
+```
 Ahora puedes acceder a la aplicación en http://127.0.0.1:8000/.
 
 ### Ejecutar los Casos de Prueba
 Sigue estos pasos para ejecutar los casos de prueba:
-
 ```bash
 python manage.py test mynotes
 ```
