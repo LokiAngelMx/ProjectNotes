@@ -20,6 +20,9 @@ class NoteDetailView(LoginRequiredMixin, generic.DetailView):
     model = Note
     template_name = 'mynotes/note_detail.html'
 
+    def get_queryset(self):
+        return Note.objects.filter(user=self.request.user)
+
 # Vista para crear una nota
 @login_required
 def note_create(request):
